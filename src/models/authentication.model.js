@@ -5,7 +5,8 @@ var Employee = function(employee){
     this.name           =   employee.name;
     this.email          =   employee.email;
     this.phone          =   employee.phone;
-    this.dept_id      =   employee.dept_id;
+    this.dept_id        =   employee.dept_id;
+    this.password       =   employee.password;
 }
 
 // create new company
