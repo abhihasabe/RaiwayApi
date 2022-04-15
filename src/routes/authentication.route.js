@@ -13,4 +13,8 @@ router.post('/addEmployee', companysController.createAdmin);
 
 router.get('/getDept', companysController.showDepartments);
 
+
+// get Employee By ID
+router.get('/getEmployeeID/:id', companysController.getEmployeeID);
+
 module.exports = router;

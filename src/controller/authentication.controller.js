@@ -46,3 +46,16 @@ module.exports.showDepartments = (req, res)=>{
         res.json({success:1, message:"Data Fetch Successfully", data:company});
     })
 }
+
+
+
+// get city by Country ID
+module.exports.getEmployeeID = (req, res)=>{
+    //console.log('get emp by id');
+    CompanyModel.getEployee(req.params.id, (err, company)=>{
+        if(err)
+        res.json({success:0, message:err, data:company});
+        console.log('single employee data',company);
+        res.json({success:1, message:"Data Fetch Successfully", data:company});
+    })
+}
