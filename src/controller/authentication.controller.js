@@ -52,7 +52,7 @@ module.exports.showDepartments = (req, res)=>{
 // get city by Country ID
 module.exports.getEmployeeID = (req, res)=>{
     //console.log('get emp by id');
-    CompanyModel.getEployee(req.params.id, (err, company)=>{
+    CompanyModel.getEployee(req.params.id, req.params.userId, (err, company)=>{
         if(err)
         res.json({success:0, message:err, data:company});
         console.log('single employee data',company);

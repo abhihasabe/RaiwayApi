@@ -15,6 +15,6 @@ router.get('/getDept', companysController.showDepartments);
 
 
 // get Employee By ID
-router.get('/getEmployeeID/:id', companysController.getEmployeeID);
+router.get('/getEmployeeID/:id/:userId', companysController.getEmployeeID);
 
 module.exports = router;
