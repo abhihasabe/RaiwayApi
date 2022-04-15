@@ -59,3 +59,17 @@ module.exports.getEmployeeID = (req, res)=>{
         res.json({success:1, message:"Data Fetch Successfully", data:company});
     })
 }
+
+// get city by Country ID
+module.exports.updateEmpActivation = (req, res)=>{
+
+    const employeeReqData = new CompanyModel(req.body);
+    console.log('employeeReqData', employeeReqData);
+    //console.log('get emp by id');
+    CompanyModel.updateEmpActivation(req.params.id, employeeReqData, (err, company)=>{
+        if(err)
+        res.json({success:0, message:err, data:company});
+        console.log('single employee data',company);
+        res.json({success:1, message:"Update Successfully", data:company});
+    })
+}

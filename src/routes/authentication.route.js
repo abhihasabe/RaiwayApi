@@ -17,4 +17,8 @@ router.get('/getDept', companysController.showDepartments);
 // get Employee By ID
 router.get('/getEmployeeID/:id/:userId', companysController.getEmployeeID);
 
+
+//Update Activaton 
+router.patch('/updateEmpActivation/:id', companysController.updateEmpActivation);
+
 module.exports = router;

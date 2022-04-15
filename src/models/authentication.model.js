@@ -8,6 +8,7 @@ var Employee = function(employee){
     this.dept_id        =   employee.dept_id;
     this.password       =   employee.password;
     this.user_type      =   employee.user_type;
+    this.activation     =   employee.activation;
 }
 
 // create new company
@@ -70,8 +71,23 @@ Employee.getDepartments = (result) =>{
 // get employees
 Employee.getEployee = (eid, userId, result) =>{
 
-    
     dbConn.query("select * from user where dept_id  = '"+eid+"' and user_type= '"+userId+"'", (err, res)=>{
+        if(err){
+            console.log('Error while fetching companys Type', err);
+            result(null,err);
+        }else{
+            console.log('companys Type fetched successfully');
+            result(null,res);
+        }
+    })
+}
+
+// get employees
+Employee.updateEmpActivation = (eid, employeeReqData, result) =>{
+
+    var query = 'UPDATE user SET activation = ? WHERE id=?';
+
+    dbConn.query(query,[employeeReqData.activation,eid], (err, res)=>{
         if(err){
             console.log('Error while fetching companys Type', err);
             result(null,err);
