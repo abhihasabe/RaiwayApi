@@ -7,6 +7,7 @@ var Employee = function(employee){
     this.phone          =   employee.phone;
     this.dept_id        =   employee.dept_id;
     this.password       =   employee.password;
+    this.user_type      =   employee.user_type;
 }
 
 // create new company
