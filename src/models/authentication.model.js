@@ -69,9 +69,9 @@ Employee.getDepartments = (result) =>{
 }
 
 // get employees
-Employee.getEployee = (eid, userId, result) =>{
+Employee.getEployee = (did, userId, result) =>{
 
-    dbConn.query("select * from user where dept_id  = '"+eid+"' and user_type= '"+userId+"'", (err, res)=>{
+    dbConn.query("select * from user where dept_id  = '"+did+"' and user_type= '"+userId+"'", (err, res)=>{
         if(err){
             console.log('Error while fetching companys Type', err);
             result(null,err);

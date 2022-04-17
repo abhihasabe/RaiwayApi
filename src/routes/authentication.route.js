@@ -21,4 +21,5 @@ router.get('/getEmployeeID/:id/:userId', companysController.getEmployeeID);
 //Update Activaton 
 router.patch('/updateEmpActivation/:id', companysController.updateEmpActivation);
 
+
 module.exports = router;

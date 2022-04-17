@@ -28,8 +28,14 @@ app.get('/', (req, res)=>{
 // import Base routes
 const baseRoutes = require('./src/routes/authentication.route');
 
+// import Address routes
+const addressRoutes = require('./src/routes/address.route');
+
 // create base routes
 app.use('/api/v1/base', baseRoutes);
+
+// create address routes
+app.use('/api/v1/address', addressRoutes);
 
 // listen to the port
 app.listen(port, ()=>{
