@@ -20,6 +20,19 @@ Employee.getAddress = (did, result) =>{
     })
 }
 
+Employee.showDeptById = (did, result) =>{
+
+    dbConn.query('SELECT * FROM department WHERE id=?',did, (err, res)=>{
+        if(err){
+            console.log('Error while fetching companys Type', err);
+            result(null,err);
+        }else{
+            console.log('companys Type fetched successfully');
+            result(null,res);
+        }
+    })
+}
+
 // create new company
 Employee.createAddress = (employeeReqData, result) =>{
     dbConn.query('INSERT INTO address SET ?', employeeReqData, (err, res)=>{

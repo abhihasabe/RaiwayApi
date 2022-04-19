@@ -10,4 +10,7 @@ router.post('/addAddress', companysController.createAddress);
 //Show Address 
 router.get('/showAddress/:id', companysController.showAddress);
 
+//Show Address 
+router.get('/showDeptById/:id', companysController.showDeptById);
+
 module.exports = router;

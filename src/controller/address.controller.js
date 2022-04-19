@@ -12,6 +12,18 @@ module.exports.showAddress = (req, res)=>{
     })
 }
 
+// get Dept By Id
+module.exports.showDeptById = (req, res)=>{
+    //console.log('get emp by id');
+    CompanyModel.showDeptById(req.params.id,(err, company)=>{
+        if(err)
+        res.json({success:0, message:err, data:company});
+        console.log('single employee data',company);
+        res.json({success:1, message:"Data Fetch Successfully", data:company});
+    })
+}
+
+
 // create new Address
 module.exports.createAddress = (req, res) =>{
     const employeeReqData = new CompanyModel(req.body);
